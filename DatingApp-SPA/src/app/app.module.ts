@@ -7,12 +7,16 @@ import { NavComponent } from './nav/nav.component';
 import { NgModule } from '@angular/core';
 import { ValueComponent } from './value/value.component';
 import { from } from 'rxjs';
+import { HomeComponent } from './home/home.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
    declarations: [
       AppComponent,
       ValueComponent,
-      NavComponent
+      NavComponent,
+      HomeComponent,
+      RegisterComponent
    ],
    imports: [
       BrowserModule,

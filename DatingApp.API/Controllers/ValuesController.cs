@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -14,27 +14,28 @@ namespace DatingApp.API.Controllers
     [ApiController]
     public class ValuesController : ControllerBase
     {
-        private readonly DataContext _dbContext;
-
-        public ValuesController(DataContext dbContext)
+        private readonly DataContext _context;
+        public ValuesController(DataContext context)
         {
-            _dbContext = dbContext;
+            _context = context;
         }
 
+        // GET api/values
         [AllowAnonymous]
         [HttpGet]
         public async Task<IActionResult> GetValues()
         {
-            var values = await _dbContext.Values.ToListAsync();
+            var values = await _context.Values.ToListAsync();
 
             return Ok(values);
         }
 
         // GET api/values/5
+        [AllowAnonymous]
         [HttpGet("{id}")]
         public async Task<IActionResult> GetValue(int id)
         {
-            var value = await _dbContext.Values.FirstOrDefaultAsync(x => x.Id == id);
+            var value = await _context.Values.FirstOrDefaultAsync(x => x.Id == id);
 
             return Ok(value);
         }

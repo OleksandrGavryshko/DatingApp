@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 using System;
+=======
+>>>>>>> a29c801ae7495aba48884cdcc667a2ffe4086fc9
 using Microsoft.AspNetCore.Http;
 
 namespace DatingApp.API.Helpers
@@ -12,6 +15,7 @@ namespace DatingApp.API.Helpers
             response.Headers.Add("Access-Control-Allow-Origin", "*");
         }
 
+<<<<<<< HEAD
         public static int CalculateAge(this DateTime theDateTime)
         {
             var age = DateTime.Today.Year - theDateTime.Year;
@@ -20,5 +24,7 @@ namespace DatingApp.API.Helpers
 
             return age;
         }
+=======
+>>>>>>> a29c801ae7495aba48884cdcc667a2ffe4086fc9
     }
 }

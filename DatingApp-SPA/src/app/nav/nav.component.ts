@@ -15,11 +15,7 @@ export class NavComponent implements OnInit {
     public authService: AuthService,
     private alertify: AlertifyService,
     private router: Router
-<<<<<<< HEAD
   ) {}
-=======
-    ) {}
->>>>>>> a29c801ae7495aba48884cdcc667a2ffe4086fc9
 
   ngOnInit() {}
 

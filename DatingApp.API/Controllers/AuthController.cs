@@ -46,33 +46,20 @@ namespace DatingApp.API.Controllers
 
         [HttpPost("login")]
         public async Task<IActionResult> Login(UserForLoginDto userForLoginDto)
-<<<<<<< HEAD
         {           
             var userFromRepo = await _repo.Login(userForLoginDto.Username
                 .ToLower(), userForLoginDto.Password);
-=======
-        {
-            var userFromRepo = await _repo.Login(userForLoginDto.Username.ToLower(), userForLoginDto.Password);
->>>>>>> a29c801ae7495aba48884cdcc667a2ffe4086fc9
 
             if (userFromRepo == null)
                 return Unauthorized();
 
             var claims = new[]
             {
-<<<<<<< HEAD
                 new Claim(ClaimTypes.NameIdentifier, userFromRepo.Id.ToString()),
                 new Claim(ClaimTypes.Name, userFromRepo.Username)
             };
 
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config.GetSection("AppSettings:Token").Value));
-=======
-                 new Claim(ClaimTypes.NameIdentifier, userFromRepo.Id.ToString()),
-                new Claim(ClaimTypes.Name, userFromRepo.Username)
-            };
-
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration.GetSection("AppSettings:Token").Value));
->>>>>>> a29c801ae7495aba48884cdcc667a2ffe4086fc9
 
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha512Signature);
 
@@ -87,11 +74,7 @@ namespace DatingApp.API.Controllers
 
             var token = tokenHandler.CreateToken(tokenDescriptor);
 
-<<<<<<< HEAD
             return Ok(new 
-=======
-            return Ok(new
->>>>>>> a29c801ae7495aba48884cdcc667a2ffe4086fc9
             {
                 token = tokenHandler.WriteToken(token)
             });

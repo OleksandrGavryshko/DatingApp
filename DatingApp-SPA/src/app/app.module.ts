@@ -13,11 +13,7 @@ import {ErrorInterceptorProvider} from './_services/error.interceptor';
 import { MemberListComponent } from './member-list/member-list.component';
 import { ListsComponent } from './lists/lists.component';
 import { MessagesComponent } from './messages/messages.component';
-<<<<<<< HEAD
 import { appRoutes } from './routes';
-=======
-import { appRouts } from './routes';
->>>>>>> a29c801ae7495aba48884cdcc667a2ffe4086fc9
 
 @NgModule({
    declarations: [
@@ -30,21 +26,12 @@ import { appRouts } from './routes';
       MessagesComponent
    ],
    imports: [
-<<<<<<< HEAD
       BrowserModule,
       HttpClientModule,
       FormsModule,
       BsDropdownModule.forRoot(),
       RouterModule.forRoot(appRoutes)
    ],
-=======
-	 BrowserModule,
-	 HttpClientModule,
-	 FormsModule,
-    BsDropdownModule.forRoot(),
-    RouterModule.forRoot(appRouts)
-	],
->>>>>>> a29c801ae7495aba48884cdcc667a2ffe4086fc9
    providers: [
       ErrorInterceptorProvider
    ],
